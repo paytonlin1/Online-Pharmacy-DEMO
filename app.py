@@ -3,17 +3,16 @@ from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import re
 
-#TEMPLATE
-
+# TEMPLATE
 app = Flask(__name__)
 
 
 app.secret_key = 'your secret key'
 
-
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'password'
+# Add info here
+app.config['MYSQL_HOST'] = ''
+app.config['MYSQL_USER'] = ''
+app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = ''
 
 
@@ -58,12 +57,7 @@ def register():
         username = request.form['username']
         password = request.form['password']
         email = request.form['email']
-        organisation = request.form['organisation']
-        address = request.form['address']
-        city = request.form['city']
-        state = request.form['state']
-        country = request.form['country']
-        postalcode = request.form['postalcode']
+        dob = request.form['dob']
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute(
             'SELECT * FROM accounts WHERE username = % s', (username, ))
@@ -78,8 +72,7 @@ def register():
             cursor.execute('INSERT INTO accounts VALUES \
             (NULL, % s, % s, % s, % s, % s, % s, % s, % s, % s)',
                            (username, password, email, 
-                            organisation, address, city,
-                            state, country, postalcode, ))
+                            dob))
             mysql.connection.commit()
             msg = 'You have successfully registered !'
     elif request.method == 'POST':
@@ -113,12 +106,7 @@ def update():
             username = request.form['username']
             password = request.form['password']
             email = request.form['email']
-            organisation = request.form['organisation']
-            address = request.form['address']
-            city = request.form['city']
-            state = request.form['state']
-            country = request.form['country']
-            postalcode = request.form['postalcode']
+            dob = request.form['dob']
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute(
                 'SELECT * FROM accounts WHERE username = % s',
@@ -135,8 +123,7 @@ def update():
                 password =% s, email =% s, organisation =% s, \
                 address =% s, city =% s, state =% s, \
                 country =% s, postalcode =% s WHERE id =% s', (
-                    username, password, email, organisation, 
-                  address, city, state, country, postalcode, 
+                    username, password, email, dob 
                   (session['id'], ), ))
                 mysql.connection.commit()
                 msg = 'You have successfully updated !'
