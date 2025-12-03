@@ -1,0 +1,114 @@
+.top-header {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    font-size: 0.9rem;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #0d6efd !important;
+}
+
+.nav-link.active {
+    color: #0d6efd !important;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 80px 0;
+    margin-bottom: 50px;
+}
+
+.portal-card {
+    transition: all 0.3s;
+    border: 2px solid #dee2e6;
+    height: 100%;
+}
+
+.portal-card:hover {
+    border-color: #0d6efd;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.portal-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.stats-card {
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+}
+
+.stats-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.stats-card h3 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.appointment-item {
+    padding: 10px 0;
+}
+
+.medication-item {
+    padding: 15px 0;
+}
+
+.table th {
+    font-weight: 600;
+    color: #495057;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.footer {
+    background-color: #212529;
+    color: white;
+    padding: 50px 0 0;
+}
+
+.footer h5 {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.footer a {
+    color: #adb5bd;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+    color: #adb5bd;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: #0d6efd;
+}

@@ -9,8 +9,8 @@ app = Flask(__name__)
 # app.config['MYSQL_DB'] = ''
 
 @app.route('/')
-def login():
-    return render_template('login.html')
+def home():
+    return render_template('home.html')
 if __name__ == '__main__':
     app.run()
     
