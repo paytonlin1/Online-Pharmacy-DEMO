@@ -1,3 +1,4 @@
+-- CREATE SCHEMA pharmacy;--
 USE pharmacy_testing;
 CREATE table doctor
 	(doctor_id INT,
@@ -35,7 +36,6 @@ CREATE table prescriptions
 	(prescript_id INT,
 	patient_id INT,
 	doctor_id INT,
-	price FLOAT(0),
     drug_id INT,
 	dosage INT,
     PRIMARY KEY(prescript_id),
@@ -62,7 +62,7 @@ CREATE table orders
 	patient_id INT,
 	prescript_id INT,
 	pharmacist_id INT,
-	status ENUM("Cancelled, Scheduled, Completed"),
+	status ENUM('Cancelled', 'Scheduled', 'Completed'),
     PRIMARY KEY(order_id),
     FOREIGN KEY(pharmacy_id)
 		references pharmacy,
@@ -72,5 +72,7 @@ CREATE table orders
 		references prescriptions,
     FOREIGN KEY(pharmacist_id)
 		references pharmacist);
+        
+
 
 
